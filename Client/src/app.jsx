@@ -8,14 +8,14 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Splash duration (1 second)
-    const timer = setTimeout(() => setLoading(false), 1000);
+    
+    const timer = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <BrowserRouter>
-      <Toaster />
+      <Toaster position="top-center" reverseOrder={false} />
       {loading ? <SplashScreen /> : <AppContent />}
     </BrowserRouter>
   );
